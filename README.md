@@ -1,16 +1,7 @@
-# Lerning/School Management System
+# Mandap Community Admin Frontend
 
 ## Overview
 
-This School Management System is a web-based application developed using the MERN stack (MongoDB, Express.js, React, Node.js). It provides a comprehensive solution for managing various aspects of a school, including student information, class schedules, attendance, and more.
-
-## Features
-
-- **User Authentication**: Secure authentication system for administrators, teachers, parents and students.
-- **Student Management**: Track student information, academic records, and attendance.
-- **Class Scheduling**: Efficiently manage class schedules and teacher assignments.
-- **Attendance Tracking**: Record and monitor student attendance easily.
-- **Gradebook**: Keep track of student grades and academic performance.
 
 
 ## Installation
@@ -31,13 +22,6 @@ Follow the steps below to set up and run the School Management System locally.
     npm install
     ```
 
-3. Start the backend server(with nodemon):
-
-    ```bash
-    npm start
-    ```
-
-   The backend server will run at `http://localhost:5000`.
 
 
 ### Frontend
@@ -54,37 +38,21 @@ Follow the steps below to set up and run the School Management System locally.
     npm install
     ```
 
-3. Start the frontend development server:
 
-    ```bash
+### Concurrently 
+From root directory, i.e. `Mandap-Community-App`
+
     npm start
-    ```
+
+This will use `concurrently` to run the frontend and backend servers simultaneously.
+
+   The backend server will run at `http://localhost:5000`.
 
    The frontend development server will run at `http://localhost:3000`.
 
-
-### Concurrently (Optional)
-    
-Alternatively, you can run both frontend and backend concurrently from the project root:
-
-    npm start
-
-This will use concurrently to run the frontend and backend servers simultaneously.
-
-
 ## Screenshots
 
-![Choose](assets/choose.png)
-*Choose your role*
 
-![Admin Login](assets/a_login.png)
-*Admin Login Page*
-
-![Admin Register](assets/a_register.png)
-*Admin Registration Page*
-
-![Admin Home](assets/a_home.png)
-*Admin Home Page*
 
 
 ## Demo
