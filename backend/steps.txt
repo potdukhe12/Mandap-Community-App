@@ -1,0 +1,20 @@
+cd backend
+
+npm init --yes
+
+npm install express mongoose dotenv nodemon cors
+
+package.json ==> scripts ==> "start": "nodemon index.js"
+
+index.js
+db.js
+
+
+////////////////////////////////////////////////////////////
+
+
+npm install jsonwebtoken joi joi-password-complexity
+
+npm install bcrypt
+    // to hash/ encrypt password and store in database
+
