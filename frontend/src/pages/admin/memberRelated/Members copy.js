@@ -1,24 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Typography, TextField, Grid, Box, InputAdornment, Tooltip, Button, Select, MenuItem } from '@mui/material';
+import { Typography, TextField, Grid, Box } from '@mui/material';
 import CustomTable2 from '../../../components/CustomTable2';
-import {
-  AddCard as AddAssociationIcon,
-  Search as SearchIcon
-} from '@mui/icons-material';
 
 const Members = ({ associationName, associationRole }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
-  const [statusFilter, setStatusFilter] = useState('All');
 
   const handleMemberClick = (id) => {
     navigate(`/Admin/members/${id}`);
-  };
-
-  const handleAddMember = () => {
-    // Navigate to the AddAssociation page
-    navigate('/Admin/addMember');
   };
 
   const membersData = [
@@ -148,7 +138,7 @@ const Members = ({ associationName, associationRole }) => {
       name: 'Grace Turner',
       role: 'Member',
       association: 'Sky-High Association',
-      status: 'Pending',
+      status: 'Rejected',
       email: 'graceturner@example.com',
       mobile: '9876543210',
       address: '789 Skyway, Highville, State, 54321',
@@ -172,92 +162,101 @@ const Members = ({ associationName, associationRole }) => {
   
 
   const filteredMembers = membersData.filter((member) => {
-    const includesSearchTerm =
-      member.name.toLowerCase().includes(searchTerm.trim().toLowerCase()) ||
-      member.association.toLowerCase().includes(searchTerm.trim().toLowerCase());
+    
+    const includesSearchTerm = member.name.toLowerCase().includes(searchTerm.trim().toLowerCase()) ||
+  member.association.toLowerCase().includes(searchTerm.trim().toLowerCase());
 
-    const matchesAssociationName =
-      !associationName || member.association === associationName;
+    const matchesAssociationName = !associationName || member.association === associationName;
     const matchesRole = !associationRole || member.role === associationRole;
-
-    const matchesStatus =
-      statusFilter === 'All' || member.status.toLowerCase() === statusFilter.toLowerCase();
-
-    return includesSearchTerm && matchesAssociationName && matchesRole && matchesStatus;
+    
+    return includesSearchTerm && matchesAssociationName && matchesRole;
   });
 
   return (
     <div>
-      <Grid container spacing={2} sx={{ padding: '0 10px', marginBottom: '20px' }}>
-        <Grid item xs={8} md={4}>
-            <Box
+      <Grid container spacing={2} 
+            sx={{ 
+                    padding: '0 10px 10px 10px', 
+                    minHeight: '100px' 
+                }}>
+        <Grid item xs={12} md={7}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              width: '100%',
+              overflow: 'hidden',
+            }}
+          >
+            <Typography
               sx={{
-                display: !associationName ? 'flex' : 'none',
-                overflow: 'hidden',
-                minWidth: '200px'
+                borderBottom: '2px solid #000',
+                fontSize: '26px',
               }}
             >
-              <Typography sx={{ borderBottom: '2px solid #000', fontSize: '26px' }}>
-                List of Members:
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={4} md={3}>
-            <Select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-              fullWidth
-              size="small"
-              variant="outlined"
-              sx={{  }}
-            >
-              <MenuItem value="All">All Members</MenuItem>
-              <MenuItem value="Pending">New Members</MenuItem>
-              <MenuItem value="Rejected">Rejected Members</MenuItem>
-            </Select>
-          </Grid>
-          <Grid item xs={8} md={3}>
-            <TextField
-              label="Search"
-              variant="outlined"
-              fullWidth
-              size="small"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end" sx={{ cursor: 'pointer' }}>
-                    <Tooltip title="Search">
-                      <SearchIcon />
-                    </Tooltip>
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </Grid>
-          <Grid item xs={4} md={2}>
-            <Tooltip title="Create New Association">
-              <Button
-                variant="contained"
-                color="primary"
-                fullWidth
-                sx={{
-                  height: '100%',
-                }}
-                onClick={handleAddMember}
-              >
-                <AddAssociationIcon sx={{ marginRight: '8px' }} />
-                Create
-              </Button>
-            </Tooltip>
-          </Grid>
+              List of Members:
+            </Typography>
+          </Box>
         </Grid>
-      <Grid container spacing={2} sx={{ padding: '20px 10px 50px 20px' }}>
-        <CustomTable2
-          members={filteredMembers}
-          onRowClick={(row) => handleMemberClick(row.id)}
-        />
+        <Grid item xs={12} md={5}>
+          <TextField
+            label="Search Members"
+            variant="outlined"
+            style={{
+              marginBottom: '20px',
+              alignItems: 'center',
+            }}
+            fullWidth
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </Grid>
       </Grid>
+      {/* <Grid container spacing={3} sx={{ padding: '0 10px 0 10px' }}>
+        {filteredMembers.map((member) => (
+          <Grid item xs={12} md={6} key={member.id}>
+            <Card
+              sx={{
+                background: 'linear-gradient(to bottom, #fcdbbc, #fef5ec)',
+                display: 'flex',
+                alignItems: 'center',
+                cursor: 'pointer',
+                minHeight: '120px',
+                paddingLeft: '16px',
+                transition: 'background 0.3s ease,box-shadow 0.3s ease',
+                boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
+                '&:hover': {
+                  background: 'linear-gradient(to bottom, #fef5ec, #fde8d4)',
+                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+                  transition: 'background 0.3s ease,box-shadow 0.3s ease',
+                },
+              }}
+              onClick={() => handleMemberClick(member.id)}
+            >
+              <ListItemAvatar>
+                <Avatar alt="Member Image">{member.name[0]}</Avatar>
+              </ListItemAvatar>
+              <CardContent>
+                <Typography variant="h6" component="div">
+                  {member.name}
+                </Typography>
+                <Typography color="text.secondary">{`${member.role}`}</Typography>
+                <Typography color="text.primary">{`${member.association}`}</Typography>
+              </CardContent>
+              <CardActions sx={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
+                <IconButton onClick={() => handleMemberClick(member.id)} sx={{ padding: '0' }}>
+                  <ChevronRightIcon sx={{ fontSize: '2em' }} />
+                </IconButton>
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid> */}
+      <CustomTable2
+        members={filteredMembers}
+        onRowClick={(row) => handleMemberClick(row.id)}
+      />
     </div>
   );
 };

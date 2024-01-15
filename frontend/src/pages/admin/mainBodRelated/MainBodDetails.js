@@ -25,35 +25,31 @@ import {
 } from '@mui/material';
 import Img from '../../../assets/profileImg.jpg';
 
-const MemberDetails = () => {
-  // Use the useParams hook to get the member id from the URL
+const MainBodDetails = () => {
+  // Use the useParams hook to get the Main BOD member id from the URL
   const { id } = useParams();
 
-  // Replace this with the logic to fetch member details based on the id
+  // Replace this with the logic to fetch Main BOD member details based on the id
   // For now, we'll use a placeholder object
-  const memberDetails = {
+  const mainBodDetails = {
     id: 1,
     name: 'John Doe',
-    role: 'Member',
-    association: 'Sky-High Association',
+    role: 'Main BOD',
     status: 'Active',
     contactInfo: 'johndoe@example.com',
     address: '123 Main St, Cityville, State, 12345',
     dateOfJoining: '2022-01-01',
-    dateOfCancellation: '2022-06-30', // Only applicable if status is 'Inactive'
   };
 
-  // Destructure memberDetails object
+  // Destructure mainBodDetails object
   const {
     name,
     role,
-    association,
     status,
     contactInfo,
     address,
     dateOfJoining,
-    dateOfCancellation,
-  } = memberDetails;
+  } = mainBodDetails;
 
   // State for role dropdown
   const [selectedRole, setSelectedRole] = useState(role);
@@ -100,6 +96,7 @@ const MemberDetails = () => {
           alignItems: 'center',
           justifyContent: 'space-between',
           marginBottom: '24px',
+          minWidth: '400px'
         }}
       >
         <Typography
@@ -108,7 +105,7 @@ const MemberDetails = () => {
             fontSize: '30px',
           }}
         >
-          Members Details:
+          Main BOD Details:
         </Typography>
         <Button variant="contained" color="primary" onClick={handleOpenDialog}>
           Save Changes
@@ -133,7 +130,7 @@ const MemberDetails = () => {
           }}
         >
           <Grid container>
-            {/* Member details on the left */}
+            {/* Main BOD member details on the left */}
             <Grid item xs={12} md={8}>
               <TableContainer component={Paper}>
                 <Table>
@@ -154,11 +151,9 @@ const MemberDetails = () => {
                           size= 'small'
                           value={selectedRole}
                           onChange={handleRoleChange}
+                          disabled // Main BOD role may not be editable
                         >
-                          <MenuItem value="Member">Member</MenuItem>
-                          <MenuItem value="BOD">BOD</MenuItem>
-                          <MenuItem value="Secretary">Secretary</MenuItem>
-                          <MenuItem value="President">President</MenuItem>
+                          <MenuItem value="Main BOD">Main BOD</MenuItem>
                         </Select>
                       </TableCell>
                     </TableRow>
@@ -174,15 +169,9 @@ const MemberDetails = () => {
                           onChange={(event, value) => handleStatusToggle(value)}
                         >
                           <ToggleButton value="Active">Active</ToggleButton>
-                          <ToggleButton value="Reject">Reject</ToggleButton>
+                          <ToggleButton value="Inactive">Inactive</ToggleButton>
                         </ToggleButtonGroup>
                       </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
-                        Association
-                      </TableCell>
-                      <TableCell>{association}</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
@@ -202,14 +191,6 @@ const MemberDetails = () => {
                       </TableCell>
                       <TableCell>{dateOfJoining}</TableCell>
                     </TableRow>
-                    {status === 'Inactive' && (
-                      <TableRow>
-                        <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
-                          Date of Cancellation
-                        </TableCell>
-                        <TableCell>{dateOfCancellation}</TableCell>
-                      </TableRow>
-                    )}
                   </TableBody>
                 </Table>
               </TableContainer>
@@ -245,4 +226,4 @@ const MemberDetails = () => {
   );
 };
 
-export default MemberDetails;
+export default MainBodDetails;

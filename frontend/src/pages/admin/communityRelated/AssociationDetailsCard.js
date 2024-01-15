@@ -20,7 +20,7 @@ const AssociationDetailsCard = ({ association }) => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-    <Card elevation={3} sx={{ maxWidth: '800px', minHeight: '250px', background: 'linear-gradient(to bottom, #fcdbbc, #fef5ec)', borderRadius: '30px', }}>
+    <Card elevation={6} sx={{ maxWidth: '800px', minHeight: '250px', background: 'linear-gradient(to bottom, #fcdbbc, #fef5ec)', borderRadius: '30px', }}>
       <Grid container spacing={3} sx={{ padding: '26px' }}>
         <Grid item xs={12} md={4}>
           <CardMedia

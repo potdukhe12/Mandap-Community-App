@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
+  Card,
+  CardContent,
   Typography,
+  IconButton,
+  CardActions,
+  ListItemAvatar,
+  Avatar,
   TextField,
   Grid,
   Box,
-  Button,
-  InputAdornment,
-  Tooltip,
 } from '@mui/material';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import CustomCard from '../../../components/CustomCard';
 import CustomTable from '../../../components/CustomTable';
-import {
-  AddCard as AddAssociationIcon,
-  Search as SearchIcon
-} from '@mui/icons-material';
 
 const Association = () => {
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
+  
+    // const handleAssociationClick = (id) => {
+    //   navigate(`/Admin/association/${id}`);
+    // };
 
     const handleEdit = (id) => {
       // Handle edit action
@@ -127,91 +132,66 @@ const Association = () => {
       // Add more associations as needed
     ];
 
-    const handleSearchOptionChange = (event) => {
-      setSearchOption(event.target.value);
-    };
-  
-    const handleAddAssociation = () => {
-      // Navigate to the AddAssociation page
-      navigate('/Admin/addAssociation');
-    };
-
-    const handleSearch = () => {
-
-      const filteredAssociations = associationsData.filter((association) => {
-        const searchTermLower = searchTerm.trim().toLowerCase();
-        return (
-          (association.name.toLowerCase().includes(searchTermLower)) ||
-          (association.address.toLowerCase().includes(searchTermLower)) ||
-          (association.pincode.toLowerCase().includes(searchTermLower))
-        );
-      });
-    
-      return filteredAssociations;
-    };
+    const filteredAssociations = associationsData.filter((association) =>
+        association.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
+    );
   
     return (
       <div>
-        <Grid container spacing={2} sx={{ padding: '0 10px', marginBottom: '20px' }}>
-          <Grid item xs={12} md={6}>
+        <Grid container spacing={2} sx={{padding: '0 10px'}}>
+          <Grid item xs={12} md={7}>
             <Box
               sx={{
                 display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                width: '100%',
                 overflow: 'hidden',
               }}
             >
-              <Typography sx={{ borderBottom: '2px solid #000', fontSize: '26px' }}>
+              <Typography sx={{ borderBottom: '2px solid #000',
+                                fontSize: '26px' }} >
                 List of Associations:
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={8} md={4}>
-          <TextField
-            label="Search"
-            variant="outlined"
-            fullWidth
-            size="small"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end" sx={{ cursor: 'pointer' }}>
-                  <Tooltip title="Search">
-                    <SearchIcon />
-                  </Tooltip>
-                </InputAdornment>
-              ),
-            }}
-          />
-          </Grid>
-          <Grid item xs={4} md={2}>
-            <Tooltip title="Create New Association">
-              <Button
-                variant="contained"
-                color="primary"
-                fullWidth
-                sx={{
-                  height: '100%',
+          <Grid item xs={12} md={5}>
+            <TextField
+                label="Search Associations"
+                variant="outlined"
+                style={{ 
+                    marginBottom: '20px',
+                    alignItems: 'center', 
                 }}
-                onClick={handleAddAssociation}
-              >
-                <AddAssociationIcon sx={{ marginRight: '8px' }} />
-                Create
-              </Button>
-            </Tooltip>
+                fullWidth
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container spacing={2} sx={{ padding: '20px 10px 50px 20px' }}>
-          <CustomTable
-            associations={handleSearch()}
-            onEdit={handleEdit}
-            onView={handleView}
-            onDelete={handleDelete}
-            sx={{ marginBottom: '50px' }}
-          />
-        </Grid>
-      </div>
-    );
-  };
-  
+          {/* <Grid container spacing={2} sx={{padding: '0 10px 0 10px'}}>
+            {filteredAssociations.map((association) => (
+              <Grid item xs={12} md={6} lg={4} key={association.id}>
+                <CustomCard
+                  association={association}
+                  handleAssociationClick={handleAssociationClick}
+                />
+              </Grid>
+            ))}
+          </Grid> */}
+          <Grid container spacing={2} sx={{padding: '20px 10px 50px 20px'}}>
+            <CustomTable
+              associations={filteredAssociations}
+              onEdit={handleEdit}
+              onView={handleView}
+              onDelete={handleDelete}
+              sx={{ marginBottom: '50px' }}
+            />
+          </Grid>
+        </div>
+      );
+    };
+    
+    
   export default Association;
+  

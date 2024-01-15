@@ -3,15 +3,12 @@ import { Divider, ListSubheader } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { 
     Home as HomeIcon,        
-    ClassOutlined as ClassIcon,
-    PersonOutline as StudentIcon,
-    AssignmentOutlined as SubjectIcon,
-    SupervisorAccountOutlined as TeacherIcon,
-    AnnouncementOutlined as NoticesIcon,
-    Newspaper as NewspaperIcon,
+    ClassOutlined as AssociationIcon,
+    PeopleAltOutlined as MembersIcon,
+    ContactEmergencyOutlined as BODIcon,
+    Newspaper as NoticeIcon,
     Event as EventIcon,
-    Celebration as CelebrationIcon,
-    ReportOutlined as ComplainsIcon,
+    AssessmentOutlined as AssessmentIcon,
     AccountCircleOutlined as ProfileIcon,
     ExitToApp as LogoutIcon,
 } from "@mui/icons-material";
@@ -34,85 +31,50 @@ const SideBar = () => {
                     to="/"
                     onClick={() => handleItemClick('Home')}
                     icon={<HomeIcon />}
-                    primaryText="Home"
+                    primaryText="Dashboard"
                     isActive={location.pathname === ("/")}
                 />
                 <CustomList
                     to="/Admin/association"
                     onClick={() => handleItemClick('Association')}
-                    icon={<ClassIcon />}
+                    icon={<AssociationIcon />}
                     primaryText="Association List"
                     isActive={isItemActive("/Admin/association")}
                 />
                 <CustomList
                     to="/Admin/members"
                     onClick={() => handleItemClick('Members')}
-                    icon={<StudentIcon />}
+                    icon={<MembersIcon />}
                     primaryText="Member List"
                     isActive={isItemActive("/Admin/members")}
                 />
-                {/* <CustomList
-                    to="/Admin/classes"
-                    onClick={() => handleItemClick('Classes')}
-                    icon={<ClassIcon />}
-                    primaryText="Classes / Batch"
-                    isActive={isItemActive('/Admin/classes') || activeItem==='Classes'}
-                />
                 <CustomList
-                    to="/Admin/subjects"
-                    onClick={() => handleItemClick('Subjects')}
-                    icon={<SubjectIcon />}
-                    primaryText="Subjects / Cources"
-                    isActive={isItemActive('/Admin/subjects') || activeItem==='Subjects'}
+                    to="/Admin/mainBod"
+                    onClick={() => handleItemClick('mainBod')}
+                    icon={<BODIcon />}
+                    primaryText="Main BOD"
+                    isActive={isItemActive("/Admin/mainBod")}
                 />
-                <CustomList
-                    to="/Admin/teachers"
-                    onClick={() => handleItemClick('Teachers')}
-                    icon={<TeacherIcon />}
-                    primaryText="Teachers"
-                    isActive={isItemActive('/Admin/teachers') || activeItem==='Teachers'}
-                />
-                <CustomList
-                    to="/Admin/students"
-                    onClick={() => handleItemClick('Students')}
-                    icon={<StudentIcon />}
-                    primaryText="Students"
-                    isActive={isItemActive('/Admin/students') || activeItem==='Students'}
-                /> */}
                 <CustomList
                     to="/Admin/notices"
                     onClick={() => handleItemClick('Notices')}
-                    icon={<NewspaperIcon />}
-                    primaryText="News"
+                    icon={<NoticeIcon />}
+                    primaryText="Notification"
                     isActive={isItemActive('/Admin/notices') || activeItem==='Notices'}
                 />
                 <CustomList
-                    to="/Admin/notices"
-                    onClick={() => handleItemClick('Notices')}
+                    to="/Admin/events"
+                    onClick={() => handleItemClick('Events')}
                     icon={<EventIcon />}
                     primaryText="Events"
-                    isActive={isItemActive('/Admin/notices') || activeItem==='Notices'}
+                    isActive={isItemActive('/Admin/events') || activeItem==='Events'}
                 />
                 <CustomList
-                    to="/Admin/notices"
-                    onClick={() => handleItemClick('Notices')}
-                    icon={<CelebrationIcon />}
-                    primaryText="Celebration"
-                    isActive={isItemActive('/Admin/notices') || activeItem==='Notices'}
-                />
-                {/* <CustomList
-                    to="/Admin/calendar"
-                    onClick={() => handleItemClick('Calendar')}
-                    icon={<EditCalendar />}
-                    primaryText="Calendar"
-                    isActive={isItemActive('/Admin/calendar') || activeItem==='Calendar'}
-                /> */}
-                <CustomList
-                    to="/Admin/complains"
-                    onClick={() => handleItemClick('Complains')}
-                    icon={<ComplainsIcon />}
-                    primaryText="Complains"
-                    isActive={isItemActive('/Admin/complains') || activeItem==='Complains'}
+                    to="/Admin/report"
+                    onClick={() => handleItemClick('Report')}
+                    icon={<AssessmentIcon />}
+                    primaryText="Report"
+                    isActive={isItemActive('/Admin/report') || activeItem==='Report'}
                 />
             </React.Fragment>
             <Divider sx={{ my: 1 }} />

@@ -57,25 +57,30 @@ const AssociationDetail = () => {
   return (
     <StyledBox>
       <Grid container spacing={0}>
-        <Grid item xs={12} md={6} sx={{ borderBottom: '2px solid #000' }}>
+        <Grid item xs={12} md={5} sx={{ borderBottom: '2px solid #000', flexGrow: 1 }}>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
             {association.name}
           </Typography>
         </Grid>
-        <Grid item xs={12} md={6} sx={{ borderBottom: '2px solid #000', display: 'flex', alignItems: 'center', padding: '5px 0' }}>
+        <Grid item container xs={12} md={7}
+              sx={{ 
+                borderBottom: '2px solid #000',
+                padding: '5px 0', 
+                flexWrap: 'wrap',
+                justifyContent: 'flex-end',
+                minWidth: '480px'
+              }}>
           <StyledButton
             color="inherit"
             sx={{
-                marginRight: '5px',
                 padding: '0 15px',
+                borderRadius: '24px',
                 '&:hover': {
                     backgroundColor: 'grey',
-                    borderRadius: '24px',
                     color: 'white',
                 },
               ...(selectedComponent === 'details' && {
                 backgroundColor: 'black',
-                borderRadius: '24px',
                 // borderRadius: '20px 20px 0 0',
                 color: 'white',
               }),
@@ -86,18 +91,15 @@ const AssociationDetail = () => {
           </StyledButton>
           <StyledButton
             color="inherit"
-            sx={{
-                marginRight: '5px',
+            sx={{ 
                 padding: '0 15px',
+                borderRadius: '24px',
                 '&:hover': {
                     backgroundColor: 'grey',
-                    borderRadius: '24px',
                     color: 'white',
                 },
               ...(selectedComponent === 'members' && {
                 backgroundColor: 'black',
-                borderRadius: '24px',
-                // borderRadius: '20px 20px 0 0',
                 color: 'white',
               }),
             }}
@@ -107,18 +109,15 @@ const AssociationDetail = () => {
           </StyledButton>
           <StyledButton
             color="inherit"
-            sx={{
-                marginRight: '5px',
+            sx={{ 
                 padding: '0 15px',
+                borderRadius: '24px',
                 '&:hover': {
                     backgroundColor: 'grey',
-                    borderRadius: '24px',
                     color: 'white',
                 },
               ...(selectedComponent === 'bod' && {
                 backgroundColor: 'black',
-                borderRadius: '24px',
-                // borderRadius: '20px 20px 0 0',
                 color: 'white',
               }),
             }}
@@ -128,18 +127,15 @@ const AssociationDetail = () => {
           </StyledButton>
           <StyledButton
             color="inherit"
-            sx={{
-                marginRight: '5px',
+            sx={{ 
                 padding: '0 15px',
+                borderRadius: '24px',
                 '&:hover': {
                     backgroundColor: 'grey',
-                    borderRadius: '24px',
                     color: 'white',
                 },
               ...(selectedComponent === 'secretary' && {
                 backgroundColor: 'black',
-                borderRadius: '24px',
-                // borderRadius: '20px 20px 0 0',
                 color: 'white',
               }),
             }}
@@ -149,18 +145,15 @@ const AssociationDetail = () => {
           </StyledButton>
           <StyledButton
             color="inherit"
-            sx={{
-                marginRight: '5px',
+            sx={{ 
                 padding: '0 15px',
+                borderRadius: '24px',
                 '&:hover': {
                     backgroundColor: 'grey',
-                    borderRadius: '24px',
                     color: 'white',
                 },
               ...(selectedComponent === 'president' && {
                 backgroundColor: 'black',
-                borderRadius: '24px',
-                // borderRadius: '20px 20px 0 0',
                 color: 'white',
               }),
             }}
@@ -170,7 +163,9 @@ const AssociationDetail = () => {
           </StyledButton>
         </Grid>
       </Grid>
-      <StyledBoxComponent sx={{ padding: '20px 10px 50px 10px' }}>
+      <StyledBoxComponent sx={{ 
+                padding: '20px 10px 50px 10px',
+                minWidth: '480px' }}>
         {renderComponent()}
       </StyledBoxComponent>
     </StyledBox>
