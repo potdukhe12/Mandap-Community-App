@@ -9,7 +9,7 @@ yarn-error.log
 # Frontend specific
 /frontend/node_modules/
 /frontend/build/
-/frontend/.env
+# /frontend/.env
 
 # Backend specific
 /backend/node_modules/

@@ -36,9 +36,15 @@ const MainBodDetails = () => {
     name: 'John Doe',
     role: 'Main BOD',
     status: 'Active',
-    contactInfo: 'johndoe@example.com',
+    email: 'michaeljohnson@example.com',
+    mobile: '3456789012',
     address: '123 Main St, Cityville, State, 12345',
     dateOfJoining: '2022-01-01',
+    dateOfCancellation: '2022-06-30', // Only applicable if status is 'Inactive'
+    state: 'State1',
+    city: 'City1',
+    birthdate: '1990-01-01',
+    anniversaryDate: '2020-01-01',
   };
 
   // Destructure mainBodDetails object
@@ -46,9 +52,14 @@ const MainBodDetails = () => {
     name,
     role,
     status,
-    contactInfo,
+    email,
+    mobile,
     address,
     dateOfJoining,
+    state,
+    city,
+    birthdate,
+    anniversaryDate,
   } = mainBodDetails;
 
   // State for role dropdown
@@ -175,9 +186,39 @@ const MainBodDetails = () => {
                     </TableRow>
                     <TableRow>
                       <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
-                        Contact Info
+                        Email
                       </TableCell>
-                      <TableCell>{contactInfo}</TableCell>
+                      <TableCell>{email}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                        Mobile
+                      </TableCell>
+                      <TableCell>{mobile}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                        Birthdate
+                      </TableCell>
+                      <TableCell>{birthdate}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                        Anniversary Date
+                      </TableCell>
+                      <TableCell>{anniversaryDate}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                        State
+                      </TableCell>
+                      <TableCell>{state}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                        City
+                      </TableCell>
+                      <TableCell>{city}</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>

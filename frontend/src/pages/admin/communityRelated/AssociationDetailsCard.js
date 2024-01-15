@@ -8,9 +8,10 @@ const AssociationDetailsCard = ({ association }) => {
     name,
     pincode,
     totalMembers,
-    meetingVenue,
-    meetingDay,
-    meetingTime,
+    address,
+    dateOfCreation,
+    state,
+    city,
   } = association;
 
   return (
@@ -50,24 +51,31 @@ const AssociationDetailsCard = ({ association }) => {
                 </TableRow>
                 <TableRow>
                   <TableCell component="th" scope="row" sx={{ width: '150px' }}>
-                    Meeting Venue
+                    Address
                   </TableCell>
                   <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{meetingVenue}</TableCell>
+                  <TableCell>{address}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell component="th" scope="row" sx={{ width: '150px' }}>
-                    Meeting Day
+                    Creation Day
                   </TableCell>
                   <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{meetingDay}</TableCell>
+                  <TableCell>{dateOfCreation}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell component="th" scope="row" sx={{ width: '150px' }}>
-                    Meeting Time
+                    State
                   </TableCell>
                   <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{meetingTime}</TableCell>
+                  <TableCell>{state}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell component="th" scope="row" sx={{ width: '150px' }}>
+                    City
+                  </TableCell>
+                  <TableCell sx={{ width: '1px' }}>:</TableCell>
+                  <TableCell>{city}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

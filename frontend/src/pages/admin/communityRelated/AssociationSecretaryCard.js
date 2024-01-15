@@ -4,13 +4,17 @@ import Img from '../../../assets/profileImg.jpg';
 
 const AssociationSecretaryCard = ({ association }) => {
   const {
-    name,
-    mobile,
-    email,
-    position,
-    association: associationName,
-    address,
-    birthDate,
+    name= 'Emily Davis',
+    role= 'Secretary',
+    status= 'Active',
+    email= 'emilydavis@example.com',
+    mobile= '4567890123',
+    address= '101 Tower St, Heightsville, State, 56789',
+    dateOfJoining= '2022-04-10',
+    state= 'State1',
+    city= 'City1',
+    birthdate= '1990-01-01',
+    anniversaryDate= '2020-01-01',
   } = association;
 
   return (
@@ -39,7 +43,7 @@ const AssociationSecretaryCard = ({ association }) => {
                     Name
                   </TableCell>
                   <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{name}</TableCell>
+                  <TableCell>Emily Davis</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell component="th" scope="row" sx={{ width: '150px' }}>
@@ -60,14 +64,7 @@ const AssociationSecretaryCard = ({ association }) => {
                     Position
                   </TableCell>
                   <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{position}</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell component="th" scope="row" sx={{ width: '150px' }}>
-                    Association Name
-                  </TableCell>
-                  <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{associationName}</TableCell>
+                  <TableCell>{role}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell component="th" scope="row" sx={{ width: '150px' }}>
@@ -81,7 +78,7 @@ const AssociationSecretaryCard = ({ association }) => {
                     Birth Date
                   </TableCell>
                   <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{birthDate}</TableCell>
+                  <TableCell>{birthdate}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

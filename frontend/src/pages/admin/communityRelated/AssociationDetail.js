@@ -16,9 +16,10 @@ const AssociationDetail = () => {
       pincode: '123456',
       name: 'Sky-High Association',
       totalMembers: 100,
-      meetingVenue: 'Community Hall',
-      meetingDay: 'Monday',
-      meetingTime: '6:00 PM',
+      address: 'Community Hall, 123 Main Street, Cityville',
+      dateOfCreation: '2022-01-01',
+      state: 'Cityville',
+      city: 'Cityville',
     },
     // Add more associations as needed
   ];

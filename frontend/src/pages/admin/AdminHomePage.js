@@ -71,7 +71,7 @@ const AdminHomePage = () => {
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={12} lg={4}>
-                        <StyledPaper onClick={() => navigate(`/Admin/notices`)}>
+                        <StyledPaper onClick={() => navigate(`/Admin/events`)}>
                             <img src={Events} alt="Events" />
                             <Title>
                                 Total Events

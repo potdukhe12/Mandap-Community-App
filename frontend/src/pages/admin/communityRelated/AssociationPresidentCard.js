@@ -4,14 +4,17 @@ import Img from '../../../assets/profileImg.jpg';
 
 const AssociationPresidentCard = ({ association }) => {
   const {
-    name,
-    mobile,
-    email,
-    position,
-    association: associationName,
-    classification,
-    address,
-    birthDate,
+    name= 'Michael Johnson',
+    role= 'President',
+    status= 'Active',
+    email= 'michaeljohnson@example.com',
+    mobile= '3456789012',
+    address= '789 Mountain Rd, Summitville, State, 45678',
+    dateOfJoining= '2022-04-10',
+    state= 'State1',
+    city= 'City1',
+    birthdate= '1990-01-01',
+    anniversaryDate= '2020-01-01',
   } = association;
 
   return (
@@ -40,7 +43,7 @@ const AssociationPresidentCard = ({ association }) => {
                     Name
                   </TableCell>
                   <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{name}</TableCell>
+                  <TableCell>Michael Johnson</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell component="th" scope="row" sx={{ width: '150px' }}>
@@ -61,21 +64,7 @@ const AssociationPresidentCard = ({ association }) => {
                     Position
                   </TableCell>
                   <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{position}</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell component="th" scope="row" sx={{ width: '150px' }}>
-                    Association Name
-                  </TableCell>
-                  <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{associationName}</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell component="th" scope="row" sx={{ width: '150px' }}>
-                    Classification
-                  </TableCell>
-                  <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{classification}</TableCell>
+                  <TableCell>{role}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell component="th" scope="row" sx={{ width: '150px' }}>
@@ -89,7 +78,7 @@ const AssociationPresidentCard = ({ association }) => {
                     Birth Date
                   </TableCell>
                   <TableCell sx={{ width: '1px' }}>:</TableCell>
-                  <TableCell>{birthDate}</TableCell>
+                  <TableCell>{birthdate}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
