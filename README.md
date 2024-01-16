@@ -1,113 +1,70 @@
-# Mandap Community Admin Frontend
+# Getting Started with Create React App
 
-## Overview
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
+In the project directory, you can run:
 
-## Installation
+### `npm start`
 
-Follow the steps below to set up and run the School Management System locally.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Backend
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-1. Navigate to the `backend` directory:
+### `npm test`
 
-    ```bash
-    cd backend
-    ```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-2. Install backend dependencies:
+### `npm run build`
 
-    ```bash
-    npm install
-    ```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Frontend
+### `npm run eject`
 
-1. Navigate to the `frontend` directory:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-    ```bash
-    cd frontend
-    ```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-2. Install frontend dependencies:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-    ```bash
-    npm install
-    ```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Learn More
 
-### Concurrently 
-From root directory, i.e. `Mandap-Community-App`
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-    npm start
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-This will use `concurrently` to run the frontend and backend servers simultaneously.
+### Code Splitting
 
-   The backend server will run at `http://localhost:5000`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-   The frontend development server will run at `http://localhost:3000`.
+### Analyzing the Bundle Size
 
-## Screenshots
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
+### Advanced Configuration
 
-## Demo
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Click the image below to watch a demo of the admin UI:
+### Deployment
 
-[![Watch the Demo](assets/choose.png)](assets/LMS_admin_UI_3.mp4)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-**Note:** Click the image to play the demo video.
+### `npm run build` fails to minify
 
-
-## Configuration
-
-### Backend Configuration
-
-- **MongoDB Connection:** Make sure to update the MongoDB connection string in `backend/.env` with your own MongoDB URI.
-
-### Frontend Configuration
-
-- **API Endpoint:** Update the API endpoint in `frontend/.env` if your backend is running on a different URL.
-
-<!--
-## Usage
-
-Provide instructions on how to use or interact with your School Management System. Include any specific features, workflows, or functionality users should be aware of.
-
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-
-## Contributing
-
-Feel free to contribute to this project. Fork the repository, make your changes, and submit a pull request.
-
-
-## Acknowledgments
-
-Mention any contributors, libraries, or resources you would like to acknowledge.
--->
-
-## Contact
-
-- Saurabh P.
-- potdukhe12@gmail.com
-- Project Link: [Project Repository](https://github.com/potdukhe12/LMS-Application)
-
-
-<!--
-## Related Projects
-
-List any related projects or repositories that users may find interesting.
-
----
-
-Adjust the sections and content as needed based on your project's specifics. The sections provided cover additional details, usage instructions, acknowledgments, contact information, and related projects. Modify or remove sections based on your project's requirements.
--->
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
