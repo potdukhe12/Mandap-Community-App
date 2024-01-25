@@ -40,6 +40,7 @@ import AddMember from './memberRelated/AddMember';
 import MainBOD from './mainBodRelated/MainBOD';
 import AddMainBod from './mainBodRelated/AddMainBod';
 import MainBodDetails from './mainBodRelated/MainBodDetails';
+import AdminReportPage from './AdminReportPage';
 
 const AdminDashboard = () => {
     
@@ -119,6 +120,7 @@ const AdminDashboard = () => {
                             <Route path="/" element={<AdminHomePage />} />
                             <Route path='*' element={<Navigate to="/" />} />
                             <Route path="/Admin/dashboard" element={<AdminHomePage />} />
+                            <Route path="/Admin/report" element={<AdminReportPage />} />
                             <Route path="/Admin/profile" element={<AdminProfile />} />
                             {/* <Route path="/Admin/complains" element={<SeeComplains />} /> */}
 
@@ -165,6 +167,21 @@ const styles = {
         '@media (max-width: 600px)': {
             margin: '20px 10px 0px 10px',
         }, 
+
+        ///////////////////
+
+        // height: '90vh',
+        // overflowY: 'auto', // Ensure the Box has a fixed height and is scrollable
+        // '&::-webkit-scrollbar': {
+        //     width: '8px',
+        // },
+        // '&::-webkit-scrollbar-thumb': {
+        //     backgroundColor: '#888',
+        //     borderRadius: '4px',
+        // },
+        // '&::-webkit-scrollbar-track': {
+        //     backgroundColor: '#f1f1f1',
+        // },
     },
 
     toolBarStyled: {

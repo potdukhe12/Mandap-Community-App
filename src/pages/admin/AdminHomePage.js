@@ -34,9 +34,9 @@ const AdminHomePage = () => {
     // const numberOfClasses = sclassesList && sclassesList.length;
     // const numberOfTeachers = teachersList && teachersList.length; 
 
-    const numberOfStudents = 20;
-    const numberOfClasses = 15;
-    const numberOfTeachers = 5;   
+    const numberOfMembers = 20;
+    const numberOfAssociations = 15;
+    const numberOfEvents = 5;   
 
     return (
         <>
@@ -52,7 +52,7 @@ const AdminHomePage = () => {
                             }}>
                             <img src={Members} alt="Members" />
                             <Title>Total Members</Title>
-                            <Data start={0} end={numberOfStudents} duration={2.5} />
+                            <Data start={0} end={numberOfMembers} duration={2.5} />
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={6} md={6} lg={4}>
@@ -67,7 +67,7 @@ const AdminHomePage = () => {
                             <Title>
                                 Total Associations
                             </Title>
-                            <Data start={0} end={numberOfClasses} duration={5} />
+                            <Data start={0} end={numberOfAssociations} duration={5} />
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={12} lg={4}>
@@ -76,7 +76,7 @@ const AdminHomePage = () => {
                             <Title>
                                 Total Events
                             </Title>
-                            <Data start={0} end={numberOfTeachers} duration={2.5} />
+                            <Data start={0} end={numberOfEvents} duration={2.5} />
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={12} lg={12}>

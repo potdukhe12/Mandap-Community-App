@@ -12,51 +12,20 @@ import {
   Card,
 } from '@mui/material';
 
+const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+
 const associationsData = [
-    {
-      id: 1,
-      name: 'Sky-High Association',
-    },
-    {
-      id: 2,
-      name: 'Green Oasis Association',
-    },
-    {
-      id: 3,
-      name: 'Silver Summit Association',
-    },
-    {
-      id: 4,
-      name: 'Royal Heights Association',
-    },
-    {
-      id: 5,
-      name: "Nature's Haven Association",
-    },
-    {
-      id: 6,
-      name: 'Fitness Fusion Association',
-    },
-    {
-      id: 7,
-      name: 'Sunset Serenity Association',
-    },
-    {
-      id: 8,
-      name: 'Harmony Haven Association',
-    },
-    {
-      id: 9,
-      name: 'Golden Grove Association',
-    },
-    {
-      id: 10,
-      name: 'Emerald Enclave Association',
-    },
-    {
-      id: 11,
-      name: 'Mystic Meadows Association',
-    },
+    { id: 1, name: 'Sky-High Association' },
+    { id: 2, name: 'Green Oasis Association' },
+    { id: 3, name: 'Silver Summit Association' },
+    { id: 4, name: 'Royal Heights Association' },
+    { id: 5, name: "Nature's Haven Association" },
+    { id: 6, name: 'Fitness Fusion Association' },
+    { id: 7, name: 'Sunset Serenity Association' },
+    { id: 8, name: 'Harmony Haven Association' },
+    { id: 9, name: 'Golden Grove Association' },
+    { id: 10, name: 'Emerald Enclave Association' },
+    { id: 11, name: 'Mystic Meadows Association' },
   ];
 
 const AddMember = () => {
@@ -65,6 +34,10 @@ const AddMember = () => {
     association: '',
     email: '',
     mobile: '',
+    aadhaar: '',
+    pancard: '',
+    blood_group: '',
+    image_link: '',
     address: '',
     birthdate: '',
     anniversaryDate: '',
@@ -89,6 +62,10 @@ const AddMember = () => {
       association: '',
       email: '',
       mobile: '',
+      aadhaar: '',
+      pancard: '',
+      blood_group: '',
+      image_link: '',
       address: '',
       birthdate: '',
       anniversaryDate: '',
@@ -102,23 +79,24 @@ const AddMember = () => {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      padding: '14px 26px',
     }}>
       <Card elevation={6} 
         sx={{ 
-            maxWidth: '650px', 
+            // maxWidth: '650px', 
             minHeight: '250px', 
             background: 'linear-gradient(to bottom, #fcdbbc, #fef5ec)', 
             borderRadius: '30px',
             padding: '26px 26px',
             marginBottom: '50px'  }}>
-        <Grid container spacing={1}>
+        <Grid container spacing={3}>
           <Grid item xs={12} md={12}>
             <Box
               sx={{
                 display: 'flex',
                 overflow: 'hidden',
-                marginBottom: '10px',
+                marginBottom: '0px',
               }}
             >
               <Typography sx={{ borderBottom: '2px solid #000', fontSize: '26px' }}>
@@ -126,7 +104,7 @@ const AddMember = () => {
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} xl={8}>
             <Box sx={{padding: '0px 20px 10px 20px',borderRadius: '20px', background: 'white',}}>
               <TextField
                 label="Member Name"
@@ -137,7 +115,7 @@ const AddMember = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} xl={4}>
             <Box sx={{padding: '0px 20px 10px 20px',borderRadius: '20px', background: 'white',}}>
               <FormControl variant="standard" fullWidth>
               <InputLabel htmlFor="association-select">Select Association</InputLabel>
@@ -159,7 +137,7 @@ const AddMember = () => {
             </FormControl>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} xl={4}>
             <Box sx={{padding: '0px 20px 10px 20px',borderRadius: '20px', background: 'white',}}>
               <TextField
                 label="Email"
@@ -170,7 +148,7 @@ const AddMember = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} xl={4}>
             <Box sx={{padding: '0px 20px 10px 20px',borderRadius: '20px', background: 'white',}}>
               <TextField
                 label="Mobile"
@@ -181,7 +159,29 @@ const AddMember = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={6} md={6}>
+          <Grid item xs={12} md={6} xl={4}>
+            <Box sx={{padding: '0px 20px 10px 20px',borderRadius: '20px', background: 'white',}}>
+              <TextField
+                label="Aadhaar Number"
+                variant="standard" // Use standard variant
+                fullWidth
+                value={memberData.aadhaar}
+                onChange={handleChange('aadhaar')}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6} xl={4}>
+            <Box sx={{padding: '0px 20px 10px 20px',borderRadius: '20px', background: 'white',}}>
+              <TextField
+                label="Pancard Number"
+                variant="standard" // Use standard variant
+                fullWidth
+                value={memberData.pancard}
+                onChange={handleChange('pancard')}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={6} md={6} xl={4}>
             <Box
               sx={{
                 padding: '0px 15px 10px 15px',
@@ -200,7 +200,7 @@ const AddMember = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={6} md={6}>
+          <Grid item xs={6} md={6} xl={4}>
             <Box
               sx={{
                 padding: '0px 15px 10px 15px',
@@ -219,7 +219,51 @@ const AddMember = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={6} md={6}>
+          <Grid item xs={12} md={6} xl={4}>
+            <Box sx={{padding: '0px 20px 10px 20px',borderRadius: '20px', background: 'white',}}>
+              <TextField
+                label="Profile Image Link"
+                variant="standard" // Use standard variant
+                fullWidth
+                value={memberData.image_link}
+                onChange={handleChange('image_link')}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={3} xl={2}>
+            <Box sx={{padding: '0px 20px 10px 20px',borderRadius: '20px', background: 'white',}}>
+              <FormControl variant="standard" fullWidth>
+                <InputLabel htmlFor="blood-group-select">Blood Group</InputLabel>
+                <Select
+                  id="blood-group-select"
+                  value={memberData.blood_group}
+                  onChange={handleChange('blood_group')}
+                  label="Blood Group"
+                >
+                  <MenuItem value="" disabled>
+                    Select Blood Group
+                  </MenuItem>
+                  {bloodGroups.map((group) => (
+                    <MenuItem key={group} value={group}>
+                      {group}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={3} xl={2}>
+            <Box sx={{padding: '0px 20px 10px 20px',borderRadius: '20px', background: 'white',}}>
+              <TextField
+                label="Pincode"
+                variant="standard" // Use standard variant
+                fullWidth
+                value={memberData.image_link}
+                onChange={handleChange('image_link')}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={6} md={6} xl={4}>
             <Box
               sx={{
                 padding: '0px 15px 10px 15px',
@@ -243,7 +287,7 @@ const AddMember = () => {
               </FormControl>
             </Box>
           </Grid>
-          <Grid item xs={6} md={6}>
+          <Grid item xs={6} md={6} xl={4}>
             <Box
               sx={{
                 padding: '0px 15px 10px 15px',
@@ -267,7 +311,7 @@ const AddMember = () => {
               </FormControl>
             </Box>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} md={12} xl={8}>
             <Box sx={{padding: '2px 20px 8px 20px',borderRadius: '20px', background: 'white', marginBottom: '15px' }}>
               <TextField
                 label="Address"

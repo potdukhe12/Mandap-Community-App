@@ -7,6 +7,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from 'react-router-dom';
 import { deleteUser } from '../../../redux/userRelated/userHandle';
 import NoticeTile2 from '../../../components/NoticeTile2';
+import NoticeTile3 from '../../../components/NoticeTile3';
 
 // Define your static events data here
 const staticEvents = [
@@ -154,7 +155,7 @@ const ShowEvents = () => {
                   <Box sx={{ width: '100%', overflow: 'hidden' }}>
                       <Grid container spacing={2}>
                           {Array.isArray(sortedEventRows) && sortedEventRows.length > 0 && (
-                              <NoticeTile2 buttonHaver={EventButtonHaver} columns={eventColumns} rows={sortedEventRows} />
+                              <NoticeTile3 buttonHaver={EventButtonHaver} columns={eventColumns} rows={sortedEventRows} />
                           )}
                       </Grid>
                   </Box>

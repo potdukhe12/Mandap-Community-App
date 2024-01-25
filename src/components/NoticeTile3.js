@@ -127,7 +127,7 @@ const formatDate = (dateString) => {
   return formattedDate;
 };
 
-const NoticeTile2 = ({ buttonHaver: ButtonHaver, rows, columns }) => (
+const NoticeTile3 = ({ buttonHaver: ButtonHaver, rows, columns }) => (
   <>
     {rows.map((row) => (
       <Grid item xs={6} md={4} lg={4} key={row.id}>
@@ -159,4 +159,4 @@ const NoticeTile2 = ({ buttonHaver: ButtonHaver, rows, columns }) => (
   </>
 );
 
-export default NoticeTile2;
+export default NoticeTile3;
